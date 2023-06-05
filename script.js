@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     Typed.new(".type", {
-      strings: ["Développeur !"],
+      strings: ["Développeur Web !","Développeur Applicatif !"],
       stringsElement: null,
       // typing speed
       typeSpeed: 60,
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       attr: null,
       // either html or text
       contentType: "html"
-    });
+    })
   
     ScrollReveal({ reset: true, distance: "60px" });
     ScrollReveal().reveal(".navigation");
@@ -82,3 +82,56 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     
   });
+
+  $(function(){
+
+    window.sr = ScrollReveal();
+  
+    if ($(window).width() < 768) {
+  
+      if ($('.timeline-content').hasClass('js--fadeInLeft')) {
+        $('.timeline-content').removeClass('js--fadeInLeft').addClass('js--fadeInRight');
+      }
+  
+      sr.reveal('.js--fadeInRight', {
+        origin: 'right',
+        distance: '300px',
+        easing: 'ease-in-out',
+        duration: 800,
+      });
+  
+    } else {
+      
+      sr.reveal('.js--fadeInLeft', {
+        origin: 'left',
+        distance: '300px',
+        easing: 'ease-in-out',
+        duration: 800,
+      });
+  
+      sr.reveal('.js--fadeInRight', {
+        origin: 'right',
+        distance: '300px',
+        easing: 'ease-in-out',
+        duration: 800,
+      });
+  
+    }
+    
+    sr.reveal('.js--fadeInLeft', {
+        origin: 'left',
+        distance: '300px',
+        easing: 'ease-in-out',
+        duration: 800,
+      });
+  
+      sr.reveal('.js--fadeInRight', {
+        origin: 'right',
+        distance: '300px',
+        easing: 'ease-in-out',
+        duration: 800,
+      });
+  
+  
+  });
+  

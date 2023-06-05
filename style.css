@@ -669,8 +669,7 @@ div.social-list .social:hover {
   width: 150px;
   height: 5px;
   background: white;
-  margin: 0 10px;
-  
+  margin: 0 10px; 
 }
 #Projet #project-title:before {
   content: "";
@@ -683,14 +682,15 @@ div.social-list .social:hover {
 #Projet .projetList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 #Projet .projetList .projet {
   width: 25%;
   margin: 13px;
   opacity: 0.75;
   transition: all 0.5s;
-  margin-bottom: 250px;
+  margin-bottom: 100px;
+  border-radius: 15px;
 }
 #Projet .projetList .projet img {
   filter: grayscale(100%);
@@ -744,10 +744,12 @@ div.social-list .social:hover {
   transform: scale(1.25);
   opacity: 1;
   
+-webkit-box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 23px -3px 15px 0px rgba(0,0,0,0); 
+box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 23px -3px 15px 0px rgba(0,0,0,0);
 }
 
 section#contact {
-  margin-top: 2000px;
+  margin-top: 1500px;
   margin-bottom: 200px;
   transition: all 0.25s;
 }
@@ -785,6 +787,15 @@ section#contact div {
   width: 150px;
   margin: auto auto;
 }
+
+section#contact div#text{
+  width: 75%;
+  font-size: 22px;
+  line-height: 35px;
+  word-spacing: 5px;
+  letter-spacing: 1px;
+}
+
 section#contact div a.brk-btn {
   color: white;
   text-decoration: none;
@@ -804,6 +815,16 @@ section#contact .social-list:hover {
   width: 35%;
 }
 
+section#contact p{
+  padding-left: 4%;
+  padding-right: 4%; 
+  font-size: 22px;
+  line-height: 35px;
+  word-spacing: 5px;
+  letter-spacing: 1px;
+}
+
+
 section.footer {
   border-top: white 1px solid;
   height: 100px;
@@ -816,10 +837,119 @@ section.footer {
 
 
 
-.timeline{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
+.timeline {
+  position: relative;
   padding-top: 200px;
+}
+.timeline::before {
+  content: '';
+  background: #c5cae9;
+  width: 5px;
+  height: 95%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.timeline-item {
+  width: 100%;
+  margin-bottom: 75px;
+  margin-top: 75px;
+}
+.timeline-item:nth-child(even) .timeline-content {
+  float: right;
+  padding: 40px 30px 10px 30px;
+}
+.timeline-item:nth-child(even) .timeline-content .date {
+  right: auto;
+  left: 0;
+}
+.timeline-item:nth-child(even) .timeline-content::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  left: -15px;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #f5f5f5 transparent transparent;
+}
+.timeline-item::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.timeline-content {
+  position: relative;
+  width: 45%;
+  padding: 10px 30px;
+  border-radius: 4px;
+  box-shadow: 0 10px 55px 5px white;
+}
+.timeline-content::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  right: -15px;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #f5f5f5;
+}
+.timeline-img {
+  width: 30px;
+  height: 30px;
+  background: #3f51b5;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-top: 25px;
+  margin-left: -15px;
+}
+.timeline-card {
+  padding: 0 !important;
+}
+.timeline-card p {
+  padding: 0 20px;
+}
+.timeline-card a {
+  margin-left: 20px;
+}
+.timeline-item .timeline-img-header {
+  /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .4)), url('https://picsum.photos/1000/800/?random') center center no-repeat; */
+  background-size: cover;
+}
+blockquote {
+  margin-top: 30px;
+  color: #757575;
+  border-left-color: #3f51b5;
+  padding: 0 20px;
+}
+@media screen and (max-width: 768px) {
+  .timeline::before {
+    left: 50px;
+ }
+  .timeline .timeline-img {
+    left: 50px;
+ }
+  .timeline .timeline-content {
+    max-width: 100%;
+    width: auto;
+    margin-left: 70px;
+ }
+  .timeline .timeline-item:nth-child(even) .timeline-content {
+    float: none;
+ }
+  .timeline .timeline-item:nth-child(odd) .timeline-content::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    top: 30px;
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #f5f5f5 transparent transparent;
+ }
 }
